@@ -14,9 +14,9 @@ void main() {
     // char test_result = PCD_SelfTest(mfrc);
 
     // if (test_result == 0) {
-    //     printf("Self Test:  SUCCESS");
+    //     printf("Self Test:  SUCCESS\n");
     // } else {
-    //     printf("Self Test: FAILED");
+    //     printf("Self Test: FAILED\n");
     // }
 
     while(1) {
