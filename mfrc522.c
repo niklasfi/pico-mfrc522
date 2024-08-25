@@ -212,7 +212,7 @@ PCD_CalculateCRC(MFRC522Ptr_t mfrc,
  */
 void PCD_Init(MFRC522Ptr_t mfrc, spi_inst_t *spi) {
 
-	mfrc->spi = spi0;
+	mfrc->spi = spi;
 	gpio_put(RESET_PIN, 0);
     sleep_ms(1000);
     gpio_put(RESET_PIN, 1);
@@ -222,9 +222,9 @@ void PCD_Init(MFRC522Ptr_t mfrc, spi_inst_t *spi) {
     gpio_set_dir(cs_pin, GPIO_OUT);
     gpio_put(cs_pin, 1);
 
-    spi_init(spi0, 1000000);
+    spi_init(spi, 100000);
 
-    spi_set_format(spi0, 8, 0, 0, SPI_MSB_FIRST);
+    spi_set_format(spi, 8, 0, 0, SPI_MSB_FIRST);
 
     gpio_set_function(sck_pin, GPIO_FUNC_SPI);
     gpio_set_function(mosi_pin, GPIO_FUNC_SPI);
